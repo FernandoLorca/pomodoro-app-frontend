@@ -3,7 +3,9 @@ import CountDownComponent from './components/CountDownComponent/CountDownCompone
 const App = () => {
   return (
     <>
-      <CountDownComponent />
+      <div className="flex justify-center items-center">
+        <CountDownComponent />
+      </div>
     </>
   );
 };

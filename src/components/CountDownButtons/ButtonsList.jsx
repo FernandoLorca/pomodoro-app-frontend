@@ -2,7 +2,7 @@ import Button from './Button';
 
 const ButtonsList = () => {
   return (
-    <ul className="flex justify-around px-5 py-2">
+    <ul className="flex justify-around px-5 mb-5">
       <li>
         <Button text="Pomodoro" />
       </li>

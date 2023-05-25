@@ -6,7 +6,7 @@ import './CountDownComponent.css';
 
 const CountDownComponent = () => {
   return (
-    <div className="CountDownWrapper rounded-lg">
+    <div className="CountDownWrapper rounded-lg h-fit py-8">
       <ButtonsList />
       <CountDownTimer />
     </div>
