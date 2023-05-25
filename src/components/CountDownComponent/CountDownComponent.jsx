@@ -1,4 +1,5 @@
-//! RECUERDA QUE ESTAS EN LA RAMA FIRST LAYOUT
+//! RECUERDA QUE ESTAS EN LA RAMA COUNT DOWN
+//! RECUERDA QUE ESTAS EN LA RAMA COUNT DOWN COMPONENT FUNCTIONALITY
 
 import ButtonsList from '../CountDownButtons/ButtonsList';
 import CountDownTimer from '../CountDownTimer/CountDownTimer';
