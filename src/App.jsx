@@ -1,18 +1,12 @@
+import CountDownComponent from './components/CountDownComponent/CountDownComponent';
+
 const App = () => {
   return (
-    <div>
-      <ul>
-        <li>
-          <button>Pomodoro</button>
-        </li>
-        <li>
-          <button>Short Break</button>
-        </li>
-        <li>
-          <button>Long Break</button>
-        </li>
-      </ul>
-    </div>
+    <>
+      <div className="flex justify-center items-center">
+        <CountDownComponent />
+      </div>
+    </>
   );
 };
 

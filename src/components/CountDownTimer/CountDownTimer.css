@@ -1,0 +1,11 @@
+.timer {
+  font-size: 6rem;
+}
+
+.buttonTimer {
+  box-shadow: 0 0.5rem 1rem 0.2rem rgba(7, 84, 228, 0.3);
+}
+
+.buttonTimer:hover {
+  box-shadow: 0 0.6rem 1rem 0.2rem rgba(7, 84, 228, 0.3);
+}
