@@ -1,5 +1,4 @@
-//! RECUERDA QUE ESTAS EN LA RAMA COUNT DOWN
-//! RECUERDA QUE ESTAS EN LA RAMA COUNT DOWN COMPONENT FUNCTIONALITY
+//! RECUERDA QUE ESTAS EN LA RAMA COUNT DOWN COMPONENT
 
 import ButtonsList from '../CountDownButtons/ButtonsList';
 import CountDownTimer from '../CountDownTimer/CountDownTimer';
