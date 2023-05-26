@@ -29,7 +29,11 @@ const CountDownTimer = () => {
   return (
     <div className="flex flex-col items-center">
       <Timer minutes={minutes} displaySeconds={displaySeconds} />
-      <ButtonStart startTimer={startTimer} text={button} />
+      <ButtonStart
+        startTimer={startTimer}
+        text={button}
+        isRunning={isRunning}
+      />
     </div>
   );
 };
