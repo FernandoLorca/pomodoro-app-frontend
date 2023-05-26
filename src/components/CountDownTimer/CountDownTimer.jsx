@@ -38,7 +38,7 @@ const CountDownTimer = () => {
         text={button}
         isRunning={isRunning}
       />
-      <ButtonReset resetTimer={resetTimer} />
+      <ButtonReset resetTimer={resetTimer} isRunning={isRunning} />
     </div>
   );
 };

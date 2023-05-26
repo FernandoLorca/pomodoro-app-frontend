@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 
-const ButtonReset = ({ resetTimer }) => {
+const ButtonReset = ({ resetTimer, isRunning }) => {
   return (
     <button
-      className="mt-5 cursor-pointer text-blue-500 hover:opacity-75"
+      className={`mt-5 cursor-pointer text-blue-500 hover:opacity-75 ${
+        isRunning && 'cursor-not-allowed'
+      }`}
       onClick={resetTimer}
     >
+      {console.log(isRunning)}
       Reset
     </button>
   );
@@ -13,6 +16,7 @@ const ButtonReset = ({ resetTimer }) => {
 
 ButtonReset.propTypes = {
   resetTimer: PropTypes.func.isRequired,
+  isRunning: PropTypes.bool.isRequired,
 };
 
 export default ButtonReset;
