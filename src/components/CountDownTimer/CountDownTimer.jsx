@@ -6,7 +6,8 @@ import ButtonReset from './ButtonReset';
 import './CountDownTimer.css';
 
 const CountDownTimer = () => {
-  const [time, setTime] = useState(25 * 60);
+  const initialTime = 25; //minutes
+  const [time, setTime] = useState(initialTime * 60);
   const [isRunning, setIsRunning] = useState(false);
   const [button, setButton] = useState('Start');
 
@@ -27,17 +28,17 @@ const CountDownTimer = () => {
     }
   }, [time, isRunning]);
 
+  const resetTimer = () => !isRunning && setTime(initialTime * 60);
+
   return (
     <div className="flex flex-col items-center">
       <Timer minutes={minutes} displaySeconds={displaySeconds} />
-      <div className="flex items-center gap-5">
-        <ButtonStart
-          startTimer={startTimer}
-          text={button}
-          isRunning={isRunning}
-        />
-        <ButtonReset />
-      </div>
+      <ButtonStart
+        startTimer={startTimer}
+        text={button}
+        isRunning={isRunning}
+      />
+      <ButtonReset resetTimer={resetTimer} />
     </div>
   );
 };

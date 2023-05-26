@@ -1,11 +1,18 @@
-import { BsXCircle } from 'react-icons/bs';
+import PropTypes from 'prop-types';
 
-const ButtonReset = () => {
+const ButtonReset = ({ resetTimer }) => {
   return (
-    <div className="h-5 w-5 cursor-pointer hover:opacity-75">
-      <BsXCircle className="h-full w-full text-blue-500" />
-    </div>
+    <button
+      className="mt-5 cursor-pointer text-blue-500 hover:opacity-75"
+      onClick={resetTimer}
+    >
+      Reset
+    </button>
   );
+};
+
+ButtonReset.propTypes = {
+  resetTimer: PropTypes.func.isRequired,
 };
 
 export default ButtonReset;
