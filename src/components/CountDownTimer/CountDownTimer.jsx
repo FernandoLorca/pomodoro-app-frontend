@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import Timer from './Timer';
 import ButtonStart from './ButtonStart';
+import ButtonReset from './ButtonReset';
 import './CountDownTimer.css';
 
 const CountDownTimer = () => {
@@ -29,11 +30,14 @@ const CountDownTimer = () => {
   return (
     <div className="flex flex-col items-center">
       <Timer minutes={minutes} displaySeconds={displaySeconds} />
-      <ButtonStart
-        startTimer={startTimer}
-        text={button}
-        isRunning={isRunning}
-      />
+      <div className="flex items-center gap-5">
+        <ButtonStart
+          startTimer={startTimer}
+          text={button}
+          isRunning={isRunning}
+        />
+        <ButtonReset />
+      </div>
     </div>
   );
 };
