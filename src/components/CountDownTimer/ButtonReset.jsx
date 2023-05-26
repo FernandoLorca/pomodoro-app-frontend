@@ -4,11 +4,10 @@ const ButtonReset = ({ resetTimer, isRunning }) => {
   return (
     <button
       className={`mt-5 cursor-pointer text-blue-500 hover:opacity-75 ${
-        isRunning && 'cursor-not-allowed'
+        isRunning && 'hidden'
       }`}
       onClick={resetTimer}
     >
-      {console.log(isRunning)}
       Reset
     </button>
   );
