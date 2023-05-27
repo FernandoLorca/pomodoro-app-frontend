@@ -1,6 +1,4 @@
-//! RECUERDA QUE ESTAS EN LA RAMA COUNT DOWN COMPONENT
-
-import ButtonsList from '../CountDownButtons/ButtonsList';
+import ButtonsList from '../Navigation/Navbar';
 import CountDownTimer from '../CountDownTimer/CountDownTimer';
 import './CountDownComponent.css';
 

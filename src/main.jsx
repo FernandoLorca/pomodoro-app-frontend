@@ -1,14 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RouterPomodoro from './router/RouterPomodoro';
-import './index.css';
+import RouterShortBreak from './router/RouterShortBreak';
+import RouterLongBreak from './router/RouterLongBreak';
 
 const router = createBrowserRouter([
   {
+    path: '*',
+    element: <div>Not Found</div>,
+  },
+  {
     path: '/',
     element: <RouterPomodoro />,
-    errorElement: <div>Error 404</div>,
+  },
+  {
+    path: '/short-break',
+    element: <RouterShortBreak />,
+  },
+  {
+    path: '/long-break',
+    element: <RouterLongBreak />,
   },
 ]);
 

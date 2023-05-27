@@ -1,8 +1,8 @@
-import Button from './Button';
+import Button from './NavigationButton';
 
 const ButtonsList = () => {
   return (
-    <ul className="flex justify-around px-5 mb-5">
+    <ul className="mb-5 flex justify-around px-5">
       <li>
         <Button text="Pomodoro" />
       </li>
