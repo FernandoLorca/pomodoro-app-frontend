@@ -1,19 +1,26 @@
-import Button from './NavigationButton';
+import { NavLink } from 'react-router-dom';
+import NavigationButton from './NavigationButton';
 
-const ButtonsList = () => {
+const Navbar = () => {
   return (
     <ul className="mb-5 flex justify-around px-5">
       <li>
-        <Button text="Pomodoro" />
+        <NavLink to="/">
+          <NavigationButton text="Pomodoro" />
+        </NavLink>
       </li>
       <li>
-        <Button text="Short break" />
+        <NavLink to="/short-break">
+          <NavigationButton text="Short break" />
+        </NavLink>
       </li>
       <li>
-        <Button text="Long break" />
+        <NavLink to="/long-break">
+          <NavigationButton text="Long break" />
+        </NavLink>
       </li>
     </ul>
   );
 };
 
-export default ButtonsList;
+export default Navbar;

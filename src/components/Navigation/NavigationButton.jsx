@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 
-const Button = ({ text }) => {
+const NavigationButton = ({ text }) => {
   return (
-    <button className="px-5 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-opacity-100">
+    <button className="rounded-lg px-5 py-2 font-semibold hover:opacity-80">
       {text}
     </button>
   );
 };
 
-Button.propTypes = {
+NavigationButton.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-export default Button;
+export default NavigationButton;
