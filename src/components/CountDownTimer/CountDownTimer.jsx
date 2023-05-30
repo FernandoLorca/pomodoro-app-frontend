@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useGlobalTimersContext } from '../../context/useGlobalTimersContext';
 
 import Timer from './Timer';
@@ -6,34 +8,30 @@ import ButtonReset from './ButtonReset';
 import './CountDownTimer.css';
 
 const CountDownTimer = () => {
-  const { timers, startTimer, resetTimer } = useGlobalTimersContext();
-  // const initialTime = 25; //minutes
-  // const [time, setTime] = useState(initialTime * 60);
-  // const [isRunning, setIsRunning] = useState(false);
-  // const [button, setButton] = useState('Start');
+  const { pathname } = useLocation();
+  const { timers, startTimer, resetTimer, setPathname } =
+    useGlobalTimersContext();
+  const [defineTimer, setDefineTimer] = useState(timers.pomodoro);
 
-  // const minutes = Math.floor(time / 60);
-  // const seconds = time % 60;
-  // const displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
+  useEffect(() => setPathname(pathname), [pathname, setPathname]);
 
-  // const startTimer = () => setIsRunning(!isRunning);
-
-  // useEffect(() => {
-  //   if (time === 0) return;
-  //   if (isRunning) {
-  //     setButton('Pause');
-  //     const id = setTimeout(() => setTime(time - 1), 1000);
-  //     return () => clearTimeout(id);
-  //   } else {
-  //     setButton('Start');
-  //   }
-  // }, [time, isRunning]);
-
-  // const resetTimer = () => !isRunning && setTime(initialTime * 60);
+  useEffect(() => {
+    switch (pathname) {
+      case '/short-break':
+        setDefineTimer(timers.shortBreak);
+        break;
+      case '/long-break':
+        setDefineTimer(timers.longBreak);
+        break;
+      default:
+        setDefineTimer(timers.pomodoro);
+        break;
+    }
+  }, [pathname, timers.shortBreak, timers.longBreak, timers.pomodoro]);
 
   return (
     <div className="flex flex-col items-center">
-      <Timer pomodoro={timers.pomodoro} />
+      <Timer timers={defineTimer} />
       <ButtonStart
         startTimer={startTimer}
         text={timers.button}

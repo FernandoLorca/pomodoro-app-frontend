@@ -1,8 +1,8 @@
 import propTypes from 'prop-types';
 
-const Timer = ({ pomodoro }) => {
-  const minutes = Math.floor(pomodoro / 60);
-  const seconds = pomodoro % 60;
+const Timer = ({ timers }) => {
+  const minutes = Math.floor(timers / 60);
+  const seconds = timers % 60;
   const displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
   return (
     <p className="timer font-bold">
@@ -12,7 +12,7 @@ const Timer = ({ pomodoro }) => {
 };
 
 Timer.propTypes = {
-  pomodoro: propTypes.number.isRequired,
+  timers: propTypes.number.isRequired,
 };
 
 export default Timer;

@@ -11,6 +11,7 @@ const GlobalTimersProvider = ({ children }) => {
     isRunning: false,
     button: 'Start',
   });
+  const [pathname, setPathname] = useState('/');
 
   const startTimer = () =>
     setTimers({ ...timers, isRunning: !timers.isRunning });
@@ -27,10 +28,26 @@ const GlobalTimersProvider = ({ children }) => {
       }));
 
       intervalId = setInterval(() => {
-        setTimers(prevTimers => ({
-          ...prevTimers,
-          pomodoro: prevTimers.pomodoro - 1,
-        }));
+        switch (pathname) {
+          case '/short-break':
+            setTimers(prevTimers => ({
+              ...prevTimers,
+              pomodoro: prevTimers.shortBreak - 1,
+            }));
+            break;
+          case '/long-break':
+            setTimers(prevTimers => ({
+              ...prevTimers,
+              pomodoro: prevTimers.longBreak - 1,
+            }));
+            break;
+          default:
+            setTimers(prevTimers => ({
+              ...prevTimers,
+              pomodoro: prevTimers.pomodoro - 1,
+            }));
+            break;
+        }
       }, 1000);
     } else {
       setTimers(prevTimers => ({
@@ -40,7 +57,7 @@ const GlobalTimersProvider = ({ children }) => {
     }
 
     return () => clearInterval(intervalId);
-  }, [timers.pomodoro, timers.isRunning]);
+  }, [timers.pomodoro, timers.isRunning, pathname]);
 
   const resetTimer = () =>
     !timers.isRunning &&
@@ -56,6 +73,7 @@ const GlobalTimersProvider = ({ children }) => {
         setTimers,
         startTimer,
         resetTimer,
+        setPathname,
       }}
     >
       {children}
