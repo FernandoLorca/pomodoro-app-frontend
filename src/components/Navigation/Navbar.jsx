@@ -3,13 +3,13 @@ import NavigationButton from './NavigationButton';
 
 const Navbar = () => {
   return (
-    <ul className="mb-5 flex justify-around px-5">
+    <ul className="flex justify-around px-5">
       <li>
-        <NavLink to="/">
-          <NavigationButton text="Pomodoro" />
-        </NavLink>
+        {/* <NavLink to="/"> */}
+        <NavigationButton text="Pomodoro" />
+        {/* </NavLink> */}
       </li>
-      <li>
+      {/* <li>
         <NavLink to="/short-break">
           <NavigationButton text="Short break" />
         </NavLink>
@@ -18,7 +18,7 @@ const Navbar = () => {
         <NavLink to="/long-break">
           <NavigationButton text="Long break" />
         </NavLink>
-      </li>
+      </li> */}
     </ul>
   );
 };
